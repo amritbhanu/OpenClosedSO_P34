@@ -12,7 +12,7 @@ if __name__ == "__main__":
     features = []
     with open('/Users/amrit/Downloads/train.csv') as csvfile:
         reader = csv.DictReader(csvfile)
-        headers=reader.fieldnames[:6]+['Text']+reader.fieldnames[13:]
+        headers = reader.fieldnames[:6]+['Text']+reader.fieldnames[13:]
         with open('train.csv', 'w') as csvfile1:
             fieldnames = ['first_name', 'last_name']
             writer = csv.DictWriter(csvfile1, fieldnames=headers)
