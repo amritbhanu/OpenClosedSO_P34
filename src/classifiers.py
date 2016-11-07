@@ -13,6 +13,7 @@ from sklearn.model_selection import StratifiedKFold
 from sklearn.metrics import precision_recall_fscore_support, classification_report
 from sklearn.svm import SVC
 from sklearn.linear_model import LogisticRegression
+from sklearn.tree import DecisionTreeClassifier
 
 
 def vectorize(records, vocab=None):
@@ -46,6 +47,11 @@ def log_reg(train_inp, train_out, test_inp):
     predicted = model.predict(test_inp)
     return model, predicted
 
+
+def dec_tree(train_inp, train_out, test_inp):
+    model = DecisionTreeClassifier().fit(train_inp, train_out)
+    predicted = model.predict(test_inp)
+    return model, predicted
 
 def split(inp, out, n_folds):
     skf = StratifiedKFold(n_splits=n_folds, random_state=None, shuffle=True)
@@ -129,5 +135,8 @@ def __main__():
 if __name__ == "__main__":
     run('data/train_mini.pkl', log_reg)
     run('data/train_mini.pkl', naive_bayes)
+    run('data/train_mini.pkl', dec_tree)
     run('data/train_mini.pkl', lin_svm)
     run('data/train_mini.pkl', rbf_svm)
+
+
