@@ -1,28 +1,20 @@
 from __future__ import print_function, division
+
 import sys
 import os
 sys.path.append(os.path.abspath("."))
 sys.dont_write_bytecode = True
-import numpy as np
 from sklearn.pipeline import Pipeline
-from sklearn.feature_extraction.text import CountVectorizer
-from sklearn.feature_extraction.text import TfidfTransformer
 from sklearn.naive_bayes import MultinomialNB
-from src.SE_preprocess import load_pkl
+from SE_preprocess import load_pkl
 from sklearn.model_selection import StratifiedKFold
 from sklearn.metrics import precision_recall_fscore_support, classification_report
 from sklearn.svm import SVC
 from sklearn.linear_model import LogisticRegression
 from sklearn.tree import DecisionTreeClassifier
-
-
-def vectorize(records, vocab=None):
-    if vocab is None:
-        vectorizer = CountVectorizer()
-    else:
-        vectorizer = CountVectorizer(vocabulary=vocab)
-    return vectorizer.fit_transform(records), vectorizer
-
+import pickle
+from features import *
+from demos import *
 
 def naive_bayes(train_inp, train_out, test_inp):
     model = MultinomialNB().fit(train_inp, train_out)
@@ -94,20 +86,17 @@ def make_report(p, r, f1, s, labels, digits=2):
     report += fmt % tuple(values)
     return report
 
-
-def run(file_name, classifier):
+def run(corpus,label, classifier,feature=""):
     print("***** %s *****" % classifier.__name__)
-    data = load_pkl(file_name)
-    labels = np.unique(data['label'])
+    labels=np.unique(label)
     precision, recall, f_score, support = np.array([0.0]*len(labels)), np.array([0.0]*len(labels)), \
         np.array([0.0]*len(labels)), np.array([0.0]*len(labels))
+
     i = 1
     splits = 2
-    for train_inp, train_out, test_inp, test_out in split(data['text'], data['label'], splits):
+    for train_inp, train_out, test_inp, test_out in split(corpus, label, splits):
         print("Split %d of %d" % (i, splits))
-        train_trans, vectorizer = vectorize(train_inp)
-        test_trans, _ = vectorize(test_inp, vocab=vectorizer.vocabulary_)
-        model, predicted = classifier(train_trans, train_out, test_trans)
+        model, predicted = classifier(train_inp, train_out, test_inp)
         p, r, f, s = measures(test_out, predicted, labels)
         precision += p
         recall += r
@@ -118,25 +107,30 @@ def run(file_name, classifier):
     recall /= len(labels)
     f_score /= len(labels)
     support /= len(labels)
-    report = make_report(precision, recall, f_score, support, labels)
-    print(report)
+    return make_report(precision, recall, f_score, support, labels)
 
-
-def __main__():
+'''def __main__():
     nb_clf = Pipeline([('vect', CountVectorizer()),
                        # ('tfidf', TfidfTransformer()),
                        ('clf', MultinomialNB())])
     data = load_pkl('data/train_mini.pkl')
     nb_clf.fit(data['text'], data['label'])
     predicted = nb_clf.predict(data['text'])
-    print(np.mean(predicted == data['label']))
+    print(np.mean(predicted == data['label']))'''
 
+def _test(res=""):
+    data = load_pkl('/share/aagrawa8/Data/train.pkl')
+    label = data['label']
+    corpus=make_feature(data['text'], sel=res, norm="l2row", n_features=4000)
 
-if __name__ == "__main__":
-    run('data/train_mini.pkl', log_reg)
-    run('data/train_mini.pkl', naive_bayes)
-    run('data/train_mini.pkl', dec_tree)
-    run('data/train_mini.pkl', lin_svm)
-    run('data/train_mini.pkl', rbf_svm)
+    classifiers=[log_reg,naive_bayes,dec_tree,rbf_svm]
+    temp={}
 
+    for i in classifiers:
+        temp[res]=run(corpus,label, i,feature=res)
+    print(temp)
+    with open('dump/'+res+'.pickle', 'wb') as handle:
+        pickle.dump(temp, handle)
 
+if __name__ == '__main__':
+    eval(cmd())
