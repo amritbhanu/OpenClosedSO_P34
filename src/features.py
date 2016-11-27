@@ -85,7 +85,7 @@ def make_feature(corpus, sel="tfidf",norm="l2row",n_features=10000):
 
     elif sel=="lda":
         corpus, _ = vectorize(corpus)
-        lda1=lda.LDA(n_topics=100, alpha=0.1, eta=0.01, n_iter=500)
+        lda1=lda.LDA(n_topics=500, alpha=0.1, eta=0.01, n_iter=1000)
         lda1.fit_transform(corpus)
         matt = lda1.doc_topic_
 

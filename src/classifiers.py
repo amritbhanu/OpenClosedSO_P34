@@ -86,7 +86,7 @@ def make_report(p, r, f1, s, labels, digits=2):
     report += fmt % tuple(values)
     return report
 
-def run(corpus,label, classifier,feature=""):
+def run(corpus,label, classifier):
     print("***** %s *****" % classifier.__name__)
     labels=np.unique(label)
     precision, recall, f_score, support = np.array([0.0]*len(labels)), np.array([0.0]*len(labels)), \
@@ -121,16 +121,17 @@ def run(corpus,label, classifier,feature=""):
 def _test(res=""):
     data = load_pkl('/share/aagrawa8/Data/train.pkl')
     label = data['label']
-    corpus=make_feature(data['text'], sel=res, norm="l2row", n_features=4000)
+    corpus=make_feature(data['text'], sel=res, norm="l2row", n_features=2000)
 
-    classifiers=[log_reg,naive_bayes,dec_tree,rbf_svm]
+    classifiers=[lin_svm,log_reg,naive_bayes,dec_tree,rbf_svm]
     temp={}
-
+    result={}
     for i in classifiers:
-        temp[res]=run(corpus,label, i,feature=res)
+        temp[i.__name__]=run(corpus,label, i)
+    result[res]=temp
     print(temp)
     with open('dump/'+res+'.pickle', 'wb') as handle:
-        pickle.dump(temp, handle)
+        pickle.dump(result, handle)
 
 if __name__ == '__main__':
     eval(cmd())

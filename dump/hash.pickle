@@ -1,0 +1,21 @@
+(dp0
+S'hash'
+p1
+(dp2
+S'rbf_svm'
+p3
+S'                     precision    recall  f1-score   support\n\nnot a real question       0.00      0.00      0.00    6157.8\n   not constructive       0.00      0.00      0.00    3131.8\n          off topic       0.00      0.00      0.00    3506.0\n               open       0.20      0.40      0.27   14027.2\n      too localized       0.00      0.00      0.00    1231.6\n\n        avg / total       0.10      0.20      0.13   28054.4\n'
+p4
+sS'naive_bayes'
+p5
+S'                     precision    recall  f1-score   support\n\nnot a real question       0.24      0.02      0.04    6157.8\n   not constructive       0.25      0.10      0.14    3131.8\n          off topic       0.26      0.04      0.07    3506.0\n               open       0.21      0.39      0.28   14027.2\n      too localized       0.00      0.00      0.00    1231.6\n\n        avg / total       0.22      0.22      0.17   28054.4\n'
+p6
+sS'log_reg'
+p7
+S'                     precision    recall  f1-score   support\n\nnot a real question       0.21      0.14      0.17    6157.8\n   not constructive       0.23      0.17      0.20    3131.8\n          off topic       0.22      0.14      0.17    3506.0\n               open       0.26      0.35      0.30   14027.2\n      too localized       0.18      0.00      0.00    1231.6\n\n        avg / total       0.23      0.24      0.23   28054.4\n'
+p8
+sS'dec_tree'
+p9
+S'                     precision    recall  f1-score   support\n\nnot a real question       0.13      0.13      0.13    6157.8\n   not constructive       0.13      0.12      0.12    3131.8\n          off topic       0.10      0.10      0.10    3506.0\n               open       0.24      0.25      0.24   14027.2\n      too localized       0.03      0.02      0.03    1231.6\n\n        avg / total       0.18      0.18      0.18   28054.4\n'
+p10
+ss.

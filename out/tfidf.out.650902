@@ -1,0 +1,51 @@
+***** log_reg *****
+Split 1 of 2
+Split 2 of 2
+***** naive_bayes *****
+Split 1 of 2
+Split 2 of 2
+***** dec_tree *****
+Split 1 of 2
+Split 2 of 2
+***** rbf_svm *****
+Split 1 of 2
+Split 2 of 2
+{'rbf_svm': '                     precision    recall  f1-score   support\n\nnot a real question       0.00      0.00      0.00    6157.8\n   not constructive       0.00      0.00      0.00    3131.8\n          off topic       0.00      0.00      0.00    3506.0\n               open       0.20      0.40      0.27   14027.2\n      too localized       0.00      0.00      0.00    1231.6\n\n        avg / total       0.10      0.20      0.13   28054.4\n', 'naive_bayes': '                     precision    recall  f1-score   support\n\nnot a real question       0.23      0.05      0.09    6157.8\n   not constructive       0.23      0.19      0.20    3131.8\n          off topic       0.23      0.11      0.15    3506.0\n               open       0.24      0.38      0.29   14027.2\n      too localized       0.17      0.00      0.00    1231.6\n\n        avg / total       0.23      0.24      0.21   28054.4\n', 'log_reg': '                     precision    recall  f1-score   support\n\nnot a real question       0.21      0.15      0.18    6157.8\n   not constructive       0.24      0.19      0.21    3131.8\n          off topic       0.23      0.16      0.19    3506.0\n               open       0.26      0.35      0.30   14027.2\n      too localized       0.21      0.00      0.01    1231.6\n\n        avg / total       0.24      0.25      0.24   28054.4\n', 'dec_tree': '                     precision    recall  f1-score   support\n\nnot a real question       0.13      0.14      0.14    6157.8\n   not constructive       0.14      0.14      0.14    3131.8\n          off topic       0.11      0.11      0.11    3506.0\n               open       0.25      0.25      0.25   14027.2\n      too localized       0.03      0.03      0.03    1231.6\n\n        avg / total       0.18      0.19      0.19   28054.4\n'}
+
+------------------------------------------------------------
+Sender: LSF System <lsfadmin@n3l4-7>
+Subject: Job 650902: </share2/aagrawa8/miniconda2/bin/python2.7 classifiers.py _test tfidf> Done
+
+Job </share2/aagrawa8/miniconda2/bin/python2.7 classifiers.py _test tfidf> was submitted from host <login04.hpc.ncsu.edu> by user <aagrawa8> in cluster <henry2>.
+Job was executed on host(s) <16*n3l4-7>, in queue <shared_memory>, as user <aagrawa8> in cluster <henry2>.
+</home/aagrawa8> was used as the home directory.
+</home/aagrawa8/svm> was used as the working directory.
+Started at Wed Nov 23 22:53:24 2016
+Results reported at Thu Nov 24 20:05:17 2016
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+/share2/aagrawa8/miniconda2/bin/python2.7 classifiers.py _test tfidf
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time   :  76356.73 sec.
+    Max Memory :      4740 MB
+    Max Swap   :      5924 MB
+
+    Max Processes  :         3
+    Max Threads    :        19
+
+The output (if any) is above this job summary.
+
+
+
+PS:
+
+Read file <./err/tfidf.err.650902> for stderr output of this job.
+
