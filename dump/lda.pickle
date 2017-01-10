@@ -4,18 +4,22 @@ p1
 (dp2
 S'rbf_svm'
 p3
-S'                     precision    recall  f1-score   support\n\nnot a real question       0.07      0.00      0.00    6157.8\n   not constructive       0.23      0.11      0.15    3131.8\n          off topic       0.30      0.01      0.02    3506.0\n               open       0.21      0.40      0.28   14027.2\n      too localized       0.00      0.00      0.00    1231.6\n\n        avg / total       0.18      0.21      0.16   28054.4\n'
+S'                     precision    recall  f1-score   support\n\nnot a real question       0.00      0.00      0.00    6157.8\n   not constructive       0.00      0.00      0.00    3131.8\n          off topic       0.00      0.00      0.00    3506.0\n               open       0.20      0.40      0.27   14027.2\n      too localized       0.00      0.00      0.00    1231.6\n\n        avg / total       0.10      0.20      0.13   28054.4\n'
 p4
-sS'naive_bayes'
+sS'lin_svm'
 p5
-S'                     precision    recall  f1-score   support\n\nnot a real question       0.00      0.00      0.00    6157.8\n   not constructive       0.19      0.00      0.00    3131.8\n          off topic       0.00      0.00      0.00    3506.0\n               open       0.20      0.40      0.27   14027.2\n      too localized       0.00      0.00      0.00    1231.6\n\n        avg / total       0.12      0.20      0.13   28054.4\n'
+S'                     precision    recall  f1-score   support\n\nnot a real question       0.12      0.00      0.00    6157.8\n   not constructive       0.24      0.12      0.16    3131.8\n          off topic       0.26      0.06      0.10    3506.0\n               open       0.21      0.39      0.28   14027.2\n      too localized       0.00      0.00      0.00    1231.6\n\n        avg / total       0.19      0.22      0.17   28054.4\n'
 p6
-sS'log_reg'
+sS'naive_bayes'
 p7
-S'                     precision    recall  f1-score   support\n\nnot a real question       0.19      0.09      0.12    6157.8\n   not constructive       0.22      0.17      0.19    3131.8\n          off topic       0.21      0.12      0.16    3506.0\n               open       0.24      0.36      0.29   14027.2\n      too localized       0.25      0.00      0.00    1231.6\n\n        avg / total       0.22      0.23      0.21   28054.4\n'
+S'                     precision    recall  f1-score   support\n\nnot a real question       0.00      0.00      0.00    6157.8\n   not constructive       0.00      0.00      0.00    3131.8\n          off topic       0.00      0.00      0.00    3506.0\n               open       0.20      0.40      0.27   14027.2\n      too localized       0.00      0.00      0.00    1231.6\n\n        avg / total       0.10      0.20      0.13   28054.4\n'
 p8
-sS'dec_tree'
+sS'log_reg'
 p9
-S'                     precision    recall  f1-score   support\n\nnot a real question       0.13      0.14      0.13    6157.8\n   not constructive       0.14      0.14      0.14    3131.8\n          off topic       0.12      0.11      0.12    3506.0\n               open       0.25      0.25      0.25   14027.2\n      too localized       0.03      0.03      0.03    1231.6\n\n        avg / total       0.19      0.19      0.19   28054.4\n'
+S'                     precision    recall  f1-score   support\n\nnot a real question       0.18      0.02      0.04    6157.8\n   not constructive       0.25      0.11      0.15    3131.8\n          off topic       0.26      0.06      0.10    3506.0\n               open       0.22      0.39      0.28   14027.2\n      too localized       0.10      0.00      0.00    1231.6\n\n        avg / total       0.21      0.22      0.18   28054.4\n'
 p10
+sS'dec_tree'
+p11
+S'                     precision    recall  f1-score   support\n\nnot a real question       0.14      0.14      0.14    6157.8\n   not constructive       0.13      0.13      0.13    3131.8\n          off topic       0.12      0.11      0.11    3506.0\n               open       0.25      0.25      0.25   14027.2\n      too localized       0.03      0.03      0.03    1231.6\n\n        avg / total       0.18      0.19      0.19   28054.4\n'
+p12
 ss.
