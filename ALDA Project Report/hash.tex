@@ -1,0 +1,76 @@
+\begin{table}[!htpb]
+\centering
+\begin{minipage}{.5\linewidth}
+    \begin{tabular}{|l|l|l|l|} \hline
+    \textbf{Class}& \textbf{Prec} & \textbf{Rec} & \textbf{F1} \\ \hline
+    Not a real question & 0.21      & 0.14   & 0.17    \\
+    Not constructive    & 0.23      & 0.17   & 0.20     \\
+    Off Topic           & 0.22      & 0.14   & 0.17     \\
+    Open                & 0.26      & 0.35   & 0.30     \\
+    Too Localized       & 0.19      & 0.00   & 0.00     \\ \hline
+    Avg                 & 0.24      & 0.24   & 0.23   \\ \hline  
+    \end{tabular}
+    \caption{Logistic Regression}
+    \label{tab:lr}
+\end{minipage}%
+\begin{minipage}{.5\linewidth}
+    \begin{tabular}{|l|l|l|l|} \hline
+    \textbf{Class}& \textbf{Prec} & \textbf{Rec} & \textbf{F1} \\ \hline
+    Not a real question & 0.24      & 0.02   & 0.04     \\
+    Not constructive    & 0.25      & 0.10   & 0.14     \\
+    Off Topic           & 0.26      & 0.04   & 0.07     \\
+    Open                & 0.21      & 0.39   & 0.28     \\
+    Too Localized       & 0.00      & 0.00   & 0.00     \\ \hline
+    Avg                 & 0.22      & 0.22   & 0.17   \\ \hline  
+    \end{tabular}
+    \caption{Naive Bayes}
+    \label{tab:nb}
+\end{minipage}
+\end{table}
+
+
+\begin{table}[!htpb]
+\centering
+\begin{minipage}{.5\linewidth}
+    \begin{tabular}{|l|l|l|l|} \hline
+    \textbf{Class}& \textbf{Prec} & \textbf{Rec} & \textbf{F1} \\ \hline
+    Not a real question & 0.00      & 0.00   & 0.00     \\
+    Not constructive    & 0.00      & 0.00   & 0.00     \\
+    Off Topic           & 0.00      & 0.00   & 0.00     \\
+    Open                & 0.20      & 0.40   & 0.27     \\
+    Too Localized       & 0.00      & 0.00   & 0.00     \\ \hline
+    Avg                 & 0.10      & 0.20   & 0.13   \\ \hline   
+    \end{tabular}
+    \caption{Radial SVM}
+    \label{tab:rsvm}
+\end{minipage}%
+\begin{minipage}{.5\linewidth}
+    \begin{tabular}{|l|l|l|l|} \hline
+    \textbf{Class}& \textbf{Prec} & \textbf{Rec} & \textbf{F1} \\ \hline
+    Not a real question & 0.21      & 0.14   & 0.17     \\
+    Not constructive    & 0.22      & 0.18   & 0.20     \\
+    Off Topic           & 0.22      & 0.15   & 0.18     \\
+    Open                & 0.26      & 0.35   & 0.30     \\
+    Too Localized       & 0.00      & 0.00   & 0.00     \\ \hline
+    Avg                 & 0.23      & 0.24   & 0.23   \\ \hline  
+    \end{tabular}
+    \caption{Linear SVM}
+    \label{tab:lsvm}
+\end{minipage}
+
+\end{table}
+
+\begin{table}[!htpb]
+\centering
+\begin{tabular}{|l|l|l|l|} \hline
+\textbf{Class}& \textbf{Prec} & \textbf{Rec} & \textbf{F1} \\ \hline
+Not a real question & 0.13      & 0.14   & 0.13     \\
+Not constructive    & 0.13      & 0.12   & 0.12     \\
+Off Topic           & 0.10      & 0.10   & 0.10     \\
+Open                & 0.24      & 0.25   & 0.24     \\
+Too Localized       & 0.03      & 0.02   & 0.02     \\ \hline
+Avg                 & 0.18      & 0.18   & 0.18   \\ \hline  
+\end{tabular}
+\caption{CART}
+\label{tab:cart}
+\end{table}
